@@ -117,8 +117,8 @@ state.last = 1 + Math.floor(rand() * 6);
     setTextStable(metric('usdt'), format.usdt(state.usdt));
     setTextStable(metric('queue'), format.queue(state.queue));
 
-    setTextStable(delta('inr'), `${state.inr >= old.inr ? '+' : '-'}₹${Math.abs(state.inr - old.inr).toFixed(1)}M`);
-    setTextStable(delta('usdt'), `${state.usdt >= old.usdt ? '+' : '-'}${Math.abs(Math.round(state.usdt - old.usdt))}k`);
+    setTextStable(delta('inr'), `${state.inr >= old.inr ? '+' : '-'}₹${Math.round(Math.abs(state.inr - old.inr))}k`);
+    setTextStable(delta('usdt'), `${state.usdt >= old.usdt ? '+' : '-'}${Math.abs(state.usdt - old.usdt).toFixed(1)}k`);
     setTextStable(delta('queue'), `${Math.max(1, Math.floor(state.queue * 0.22))} executing`);
 
     setTextStable($('[data-last-settlement]'), `${state.last}s ago`);
