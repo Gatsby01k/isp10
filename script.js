@@ -108,11 +108,10 @@ const format = {
 
   function updateMetrics() {
     const old = { ...state };
-    state.inr = Math.min(78, Math.max(22, state.inr + (rand() - 0.46) * 1.15));
-    state.usdt = Math.min(980, Math.max(260, state.usdt + (rand() - 0.47) * 22));
-    state.queue = Math.min(44, Math.max(3, state.queue + Math.round((rand() - 0.48) * 4)));
-    state.last = 3 + Math.floor(rand() * 29);
-    state.uptime = 99.965 + rand() * 0.028;
+    state.inr = Math.min(220, Math.max(120, state.inr + (rand() - 0.46) * 8));
+state.usdt = Math.min(5.5, Math.max(2.8, state.usdt + (rand() - 0.47) * 0.4));
+state.queue = Math.min(4, Math.max(1, state.queue + Math.round((rand() - 0.48) * 1)));
+state.last = 1 + Math.floor(rand() * 6);
 
     setTextStable(metric('inr'), format.inr(state.inr));
     setTextStable(metric('usdt'), format.usdt(state.usdt));
