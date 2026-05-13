@@ -44,18 +44,18 @@ const menuBtn=document.querySelector('[data-menu]');const mobile=document.queryS
   const hash = () => `0x${Math.floor(rand()*0xffff).toString(16).padStart(4,'0')}···${Math.floor(rand()*0xffff).toString(16).padStart(4,'0')}`;
 
   let state = {
-    inr: 34 + rand() * 34,
-    usdt: 380 + rand() * 480,
-    queue: 9 + Math.floor(rand() * 27),
-    last: 7 + Math.floor(rand() * 24),
-    uptime: 99.96 + rand() * 0.035
-  };
+  inr: 165 + rand() * 45,
+  usdt: 3.8 + rand() * 1.2,
+  queue: 1 + Math.floor(rand() * 3),
+  last: 1 + Math.floor(rand() * 4),
+  uptime: 0
+};
 
-  const format = {
-    inr: (v) => `₹${v.toFixed(1).padStart(4, '0')}M`,
-    usdt: (v) => `${String(Math.round(v)).padStart(3, '0')}k`,
-    queue: (v) => `${String(Math.round(v)).padStart(2, '0')}`
-  };
+const format = {
+  inr: (v) => `₹${Math.round(v)}k`,
+  usdt: (v) => `${v.toFixed(1)}k`,
+  queue: (v) => `${Math.round(v)}`
+};
 
   function eventPrefix(type) {
     if (/payout|Payout/.test(type)) return 'PAY';
