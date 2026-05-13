@@ -123,7 +123,7 @@ state.last = 1 + Math.floor(rand() * 6);
 
     setTextStable($('[data-last-settlement]'), `${state.last}s ago`);
     setTextStable($('[data-sync-age]'), `synced ${Math.max(2, Math.floor(rand()*10))}s ago`);
-    setTextStable($('[data-uptime]'), `${state.uptime.toFixed(2)}%`);
+    setTextStable($('[data-uptime]'), `Operational`);
     setTextStable($('[data-ledger-hash]'), hash());
 
     rail.querySelectorAll('[data-metric-card]').forEach((card) => {
